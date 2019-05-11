@@ -15,7 +15,7 @@ PURPLE          =       \033[0;95m
 BG_COLOR        =       \033[46m####\033[m
 IRED            =       \033[0;91m
 
-install_linux:
+linux_install:
 	sudo cp bin/linux-gcc-64/libIrrKlang.so /lib64
 	sudo cp bin/linux-gcc-64/ikpMP3.so /lib64/libikpMP3.so
 	sudo cp bin/linux-gcc-64/ikpFlac.so /lib64/libikpFlac.so
