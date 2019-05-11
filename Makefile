@@ -19,6 +19,7 @@ linux_install:
 	sudo cp bin/linux-gcc-64/libIrrKlang.so /lib64
 	sudo cp bin/linux-gcc-64/ikpMP3.so /lib64/libikpMP3.so
 	sudo cp bin/linux-gcc-64/ikpFlac.so /lib64/libikpFlac.so
+	sudo cp include/* /usr/local/include/
 
 ifndef VERBOSE
 MAKEFLAGS += --no-print-directory
