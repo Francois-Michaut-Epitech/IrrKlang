@@ -15,6 +15,8 @@ PURPLE          =       \033[0;95m
 BG_COLOR        =       \033[46m####\033[m
 IRED            =       \033[0;91m
 
+MKDIR_EXE	=	mkdir
+
 linux_install:
 	sudo mkdir -p /usr/local/lib/
 	sudo cp linux/lib/* /usr/local/lib/
@@ -22,10 +24,10 @@ linux_install:
 	sudo cp linux/include/* /usr/local/include/SFML
 
 windows_install:
-	mkdir /SFML/lib/
+	$(MKDIR_EXE) /SFML/lib/
 	cp win/lib/* /SFML/lib/
 	cp win/bin/* /SFML/lib/
-	mkdir /SFML/include/SFML
+	$(MKDIR_EXE) /SFML/include/SFML
 	cp win/include/SFML/* /SFML/include/SFML
 
 ifndef VERBOSE
