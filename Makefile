@@ -24,10 +24,10 @@ linux_install:
 	sudo cp linux/include/* /usr/local/include/SFML
 
 windows_install:
-	$(MKDIR_EXE) /SFML/lib/
+	$(MKDIR_EXE) -p /SFML/lib/
 	cp win/lib/* /SFML/lib/
 	cp win/bin/* /SFML/lib/
-	$(MKDIR_EXE) /SFML/include/SFML
+	$(MKDIR_EXE) -p /SFML/include/SFML
 	cp win/include/SFML/* /SFML/include/SFML
 
 ifndef VERBOSE
