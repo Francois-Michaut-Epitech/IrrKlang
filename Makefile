@@ -29,6 +29,7 @@ windows_install:
 	cp win/bin/* /SFML/lib/
 	$(MKDIR_EXE) -p /SFML/include/SFML
 	cp -r win/include/SFML/ /SFML/include/
+	cp win/bin/* ../..
 
 ifndef VERBOSE
 MAKEFLAGS += --no-print-directory
