@@ -25,12 +25,12 @@ linux_install:
 	sudo cp linux/include/* /usr/local/include/SFML
 
 windows_install:
-	$(MKDIR_EXE) -p $(INSTALL_DIR)/lib/
-	cp win/lib/* $(INSTALL_DIR)/lib/
-	cp win/bin/* $(INSTALL_DIR)/lib/
-	$(MKDIR_EXE) -p $(INSTALL_DIR)/include/SFML/
-	cp -r win/include/SFML/ $(INSTALL_DIR)/include/
-	cp win/bin/* ../..
+	$(MKDIR_EXE) -p "$(INSTALL_DIR)\lib"
+	cp ./win/lib/* "$(INSTALL_DIR)\lib"
+	cp ./win/bin/* "$(INSTALL_DIR)\lib"
+	$(MKDIR_EXE) -p "$(INSTALL_DIR)\include\SFML"
+	cp -r ./win/include/SFML "$(INSTALL_DIR)\include"
+	cp ./win/bin/* ../..
 
 ifndef VERBOSE
 MAKEFLAGS += --no-print-directory
