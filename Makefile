@@ -16,6 +16,7 @@ BG_COLOR        =       \033[46m####\033[m
 IRED            =       \033[0;91m
 
 MKDIR_EXE	=	mkdir
+CP_EXE	=	cp
 INSTALL_DIR	=	/SFML
 
 linux_install:
@@ -25,12 +26,14 @@ linux_install:
 	sudo cp linux/include/* /usr/local/include/SFML
 
 windows_install:
+	$(MKDIR_EXE) -p "$(INSTALL_DIR)"
 	$(MKDIR_EXE) -p "$(INSTALL_DIR)\lib"
-	cp ./win/lib/* "$(INSTALL_DIR)\lib"
-	cp ./win/bin/* "$(INSTALL_DIR)\lib"
+	$(CP_EXE) ./win/lib/* "$(INSTALL_DIR)\lib"
+	$(CP_EXE) ./win/bin/* "$(INSTALL_DIR)\lib"
+	$(MKDIR_EXE) -p "$(INSTALL_DIR)\include"
 	$(MKDIR_EXE) -p "$(INSTALL_DIR)\include\SFML"
-	cp -r ./win/include/SFML "$(INSTALL_DIR)\include"
-	cp ./win/bin/* ../..
+	$(CP_EXE) -r ./win/include/SFML "$(INSTALL_DIR)\include"
+	$(CP_EXE) ./win/bin/* ../..
 
 ifndef VERBOSE
 MAKEFLAGS += --no-print-directory
